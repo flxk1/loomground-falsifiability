@@ -6,6 +6,10 @@
 
 Ranks oversight evidence by independent falsifiability.
 
+## Problem
+
+Self-reported success counts as evidence. Ranks evidence by how it could be shown wrong; self-report never alone.
+
 ## Install
 
 ```
@@ -15,9 +19,17 @@ pip install loomground-falsifiability
 ## Usage
 
 ```python
-from loomground_falsifiability import Evidence, Falsifiability, support_verdict, fold_support
-support_verdict([Evidence("trace#12", Falsifiability.OBSERVED_TOOL_CALL)])
-fold_support([("claim-1", [Falsifiability.SELF_REPORT])]).overall
+from loomground_falsifiability import Evidence, Falsifiability, support_verdict
+support_verdict([Evidence("run#7", Falsifiability.SELF_REPORT), Evidence("trace#12", Falsifiability.OBSERVED_TOOL_CALL)])
+support_verdict([Evidence("run#7", Falsifiability.SELF_REPORT)])
+```
+
+## Example
+
+```
+in : self-report + observed tool call / self-report only
+out: Verdict.SATISFIED
+     Verdict.OPEN
 ```
 
 ## Interface

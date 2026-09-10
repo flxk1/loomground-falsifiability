@@ -1,0 +1,30 @@
+# loomground-falsifiability
+
+> Ranks oversight evidence by independent falsifiability.
+
+## Problem
+Self-reported success counts as evidence. Ranks evidence by how it could be shown wrong; self-report never alone.
+
+## Install
+```
+pip install loomground-falsifiability
+```
+
+## Usage
+```python
+from loomground_falsifiability import Evidence, Falsifiability, support_verdict
+support_verdict([Evidence("run#7", Falsifiability.SELF_REPORT), Evidence("trace#12", Falsifiability.OBSERVED_TOOL_CALL)])
+support_verdict([Evidence("run#7", Falsifiability.SELF_REPORT)])
+```
+
+## Interface
+- rank, ascending: `SELF_REPORT < DECLARED_PLAN < OBSERVED_TOOL_CALL < VERIFIED_OUTCOME < SPAN_GROUNDED < REPLAYABLE`
+- `SUPPORT_FLOOR = DECLARED_PLAN`, raisable via `floor=`
+- `support_verdict(evidence, floor=) → Verdict`: `SATISFIED` at or above floor, else `OPEN`
+- `best_support(evidence)` · `fold_support(claims, floor=) → IssueAggregate`
+- from solver: `cross_subsumption.Verdict` · `issue_aggregation.aggregate_issues`
+
+## Family
+Diagnostic operator; consumes `loomground-solver` 0.5; consumed by hosts. Pipeline: `source → loomground-ingest → loomground-versum → loomground-solver → loomground-falsifiability`. Operator contract: [spec/OPERATORS.md](https://github.com/flxk1/loomground/blob/main/spec/OPERATORS.md). [docs/operator.md](docs/operator.md).
+
+Language: loomground — guide https://github.com/flxk1/loomground/blob/main/llms.txt (the .lg language an agent reads, emits, validates); catalogue https://github.com/flxk1/loomground/blob/main/CATALOGUE.json

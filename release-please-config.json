@@ -5,7 +5,9 @@
       "release-type": "python",
       "package-name": "loomground-falsifiability",
       "changelog-path": "CHANGELOG.md",
-      "version-file": "src/loomground_falsifiability/_version.py"
+      "extra-files": [
+        "src/loomground_falsifiability/_version.py"
+      ]
     }
   }
 }

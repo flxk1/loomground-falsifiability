@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/flxk1/loomground-falsifiability/compare/loomground-falsifiability-v0.2.0...loomground-falsifiability-v0.2.1) (2026-09-12)
+
+
+### Bug Fixes
+
+* release version source (extra-files marker), 0.2.0 ([2e000ca](https://github.com/flxk1/loomground-falsifiability/commit/2e000ca163a92b9b897e83b3030291468daaea30))
+
 ## [0.2.0](https://github.com/flxk1/loomground-falsifiability/compare/loomground-falsifiability-v0.1.0...loomground-falsifiability-v0.2.0) (2026-09-11)
 
 

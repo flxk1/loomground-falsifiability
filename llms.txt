@@ -7,7 +7,7 @@ Self-reported success counts as evidence. Ranks evidence by how it could be show
 
 ## Install
 ```
-pip install loomground-falsifiability
+pip install git+https://github.com/flxk1/loomground-falsifiability
 ```
 
 ## Usage
@@ -25,6 +25,6 @@ support_verdict([Evidence("run#7", Falsifiability.SELF_REPORT)])
 - from solver: `cross_subsumption.Verdict` · `issue_aggregation.aggregate_issues`
 
 ## Family
-Diagnostic operator; consumes `loomground-solver` 0.5; consumed by hosts. Pipeline: `source → loomground-ingest → loomground-versum → loomground-solver → loomground-falsifiability`. Operator contract: [spec/OPERATORS.md](https://github.com/flxk1/loomground/blob/main/spec/OPERATORS.md). [docs/operator.md](docs/operator.md).
+Diagnostic operator; consumes `loomground-solver` 0.5–0.6; consumed by hosts. Pipeline: `source → loomground-ingest → loomground-versum → loomground-solver → loomground-falsifiability`. Operator contract: [spec/OPERATORS.md](https://github.com/flxk1/loomground/blob/main/spec/OPERATORS.md). [docs/operator.md](docs/operator.md).
 
 Language: loomground — guide https://github.com/flxk1/loomground/blob/main/llms.txt (the .lg language an agent reads, emits, validates); catalogue https://github.com/flxk1/loomground/blob/main/CATALOGUE.json
